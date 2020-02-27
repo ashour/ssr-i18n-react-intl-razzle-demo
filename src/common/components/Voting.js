@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { FormattedNumber } from "react-intl";
 
 function Voting(props) {
   const [voteCount, setVoteCount] = useState(props.initialVoteCount);
@@ -12,7 +13,7 @@ function Voting(props) {
         className={voteCountTextClass}
         style={{ marginRight: "1rem", width: "1.5rem" }}
       >
-        {voteCount}
+        <FormattedNumber value={voteCount} />
       </strong>
 
       <button

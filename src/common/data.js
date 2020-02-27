@@ -43,4 +43,48 @@ export default {
       initialVoteCount: 10,
     },
   ],
+  ar: [
+    {
+      id: 1,
+      title: "كاتان",
+      addedOn: "2020-01-15",
+      imageUrl: "/img/games/catan.jpg",
+      initialVoteCount: 12,
+    },
+    {
+      id: 2,
+      title: "سيادة",
+      addedOn: "2020-01-20",
+      imageUrl: "/img/games/dominion.jpg",
+      initialVoteCount: 22,
+    },
+    {
+      id: 3,
+      title: "الـ٧ عجائب",
+      addedOn: "2020-01-29",
+      imageUrl: "/img/games/7-wonders.jpg",
+      initialVoteCount: 18,
+    },
+    {
+      id: 4,
+      title: "مونوبولي ديل",
+      addedOn: "2020-02-02",
+      imageUrl: "/img/games/monopoly-deal.jpg",
+      initialVoteCount: 8,
+    },
+    {
+      id: 5,
+      title: "ريسك",
+      addedOn: "2020-02-19",
+      imageUrl: "/img/games/risk.jpg",
+      initialVoteCount: 3,
+    },
+    {
+      id: 6,
+      title: "قصر السعادة",
+      addedOn: "1843-01-01",
+      imageUrl: "/img/games/mansion-of-happiness.jpg",
+      initialVoteCount: 10,
+    },
+  ],
 };

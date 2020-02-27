@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { FormattedMessage } from "react-intl";
 
 function Home() {
   return (
@@ -12,16 +13,17 @@ function Home() {
         </div>
 
         <div className="column">
-          <h2 className="is-size-3">Find Your Next Game</h2>
+          <h2 className="is-size-3">
+            <FormattedMessage id="home.title" />
+          </h2>
 
           <p>
-            Vote with thousands of other players on games and find your
-            favourite!
+            <FormattedMessage id="home.lead" />
           </p>
 
           <p style={{ marginTop: "1rem" }}>
             <Link to="/games" className="button is-link">
-              Check out the games!
+              <FormattedMessage id="home.c2a" />
             </Link>
           </p>
         </div>

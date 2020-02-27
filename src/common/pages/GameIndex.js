@@ -1,4 +1,5 @@
 import React from "react";
+import { useIntl, FormattedMessage } from "react-intl";
 
 import games from "../data";
 
@@ -6,9 +7,11 @@ import "./GameIndex.css";
 import Voting from "../components/Voting";
 
 function GameIndex(props) {
+  const intl = useIntl();
+
   return (
     <div className="columns" style={{ flexWrap: "wrap" }}>
-      {games["en"].map(game => (
+      {games[intl.locale].map(game => (
         <div className="column is-one-third" key={game.id}>
           <div className="card">
             <div className="card-image">
@@ -22,7 +25,12 @@ function GameIndex(props) {
                 </h3>
 
                 <p style={{ marginBottom: "0.5rem" }}>
-                  <small>Added {game.addedOn}</small>
+                  <small>
+                    <FormattedMessage
+                      id="games.addedOn"
+                      values={{ addedOn: new Date(game.addedOn) }}
+                    />
+                  </small>
                 </p>
 
                 <Voting initialVoteCount={game.initialVoteCount} />

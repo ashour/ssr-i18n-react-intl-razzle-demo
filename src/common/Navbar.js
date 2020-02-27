@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { FormattedMessage } from "react-intl";
 
 import LangSwitcher from "./LangSwitcher";
 
@@ -15,7 +16,9 @@ function Navbar() {
       <div className="container">
         <div className="navbar-brand">
           <Link to="/" className="navbar-item">
-            <strong>Boardaki</strong>
+            <strong>
+              <FormattedMessage id="app.title" />
+            </strong>
           </Link>
 
           <a
@@ -34,11 +37,11 @@ function Navbar() {
         <div className={`navbar-menu ${isActive ? "is-active" : ""}`}>
           <div className="navbar-start">
             <Link to="/" className="navbar-item">
-              Home
+              <FormattedMessage id="nav.home" />
             </Link>
 
             <Link to="/games" className="navbar-item">
-              Games
+              <FormattedMessage id="nav.games" />
             </Link>
           </div>
 
