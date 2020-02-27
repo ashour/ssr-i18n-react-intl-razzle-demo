@@ -1,0 +1,11 @@
+.GameIndex__ImageContainer {
+  background: #363636;
+}
+
+.GameIndex__Image {
+  display: block;
+  max-width: 100%;
+  min-height: 10rem;
+  max-height: 10rem;
+  object-fit: contain;
+}
