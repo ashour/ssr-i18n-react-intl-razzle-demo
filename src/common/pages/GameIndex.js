@@ -1,9 +1,8 @@
 import React from "react";
 import { useIntl, FormattedMessage } from "react-intl";
 
-import games from "../data";
-
 import "./GameIndex.css";
+import games from "../data";
 import Voting from "../components/Voting";
 
 function GameIndex(props) {

@@ -4,13 +4,18 @@ import { Route, Switch } from "react-router-dom";
 
 import Navbar from "./Navbar";
 import Home from "./pages/Home";
-import messages from "./lang/messages";
+import { defaultLang } from "./i18n";
+import messages from "./i18n/messages";
 import GameIndex from "./pages/GameIndex";
 
 import "bulma/css/bulma.css";
 
-const App = () => (
-  <IntlProvider locale="en" messages={messages["en"]}>
+const App = ({ lang }) => (
+  <IntlProvider
+    locale={lang}
+    messages={messages[lang]}
+    defaultLocale={defaultLang}
+  >
     <Navbar />
 
     <section className="section">

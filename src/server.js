@@ -5,6 +5,7 @@ import { renderToString } from "react-dom/server";
 
 import App from "./common/App";
 import render from "./server/render";
+import { determineUserLang } from "./common/i18n";
 
 const server = express();
 server
@@ -12,9 +13,12 @@ server
   .use(express.static(process.env.RAZZLE_PUBLIC_DIR))
   .get("/*", (req, res) => {
     const context = {};
+
+    const lang = determineUserLang(req.acceptsLanguages());
+
     const markup = renderToString(
       <StaticRouter context={context} location={req.url}>
-        <App />
+        <App lang={lang} />
       </StaticRouter>,
     );
 

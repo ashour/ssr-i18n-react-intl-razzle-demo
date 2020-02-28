@@ -3,10 +3,13 @@ import { hydrate } from "react-dom";
 import { BrowserRouter } from "react-router-dom";
 
 import App from "./common/App";
+import { determineUserLang } from "./common/i18n";
+
+const lang = determineUserLang(navigator.languages || []);
 
 hydrate(
   <BrowserRouter>
-    <App />
+    <App lang={lang} />
   </BrowserRouter>,
   document.getElementById("root"),
 );
