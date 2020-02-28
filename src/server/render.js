@@ -13,7 +13,7 @@ const htmlTemplateFilename = path.resolve(
 
 const assets = require(process.env.RAZZLE_ASSETS_MANIFEST);
 
-function render(markup) {
+function render(markup, options = { lang: "", dir: "", title: "" }) {
   let html = fs.readFileSync(htmlTemplateFilename, "utf8");
 
   const css = assets.client.css
@@ -25,7 +25,24 @@ function render(markup) {
       ? `<script src="${assets.client.js}" defer></script>`
       : `<script src="${assets.client.js}" defer crossorigin></script>`;
 
-  html = html.replace("<!--__HEAD__-->", css + "\n" + js);
+  if (options.lang) {
+    html = html.replace("__LANG__", options.lang);
+  }
+
+  if (options.dir) {
+    html = html.replace("__DIR__", options.dir);
+  }
+
+  const bulmaCss =
+    options.dir && options.dir === "rtl"
+      ? '<link rel="stylesheet" href="/css/bulma-rtl.min.css">'
+      : '<link rel="stylesheet" href="/css/bulma.min.css">';
+
+  if (options.title) {
+    html = html.replace("<!--__TITLE__-->", options.title);
+  }
+
+  html = html.replace("<!--__HEAD__-->", [bulmaCss, css, js].join("\n"));
 
   html = html.replace("<!--__APP__-->", markup);
 

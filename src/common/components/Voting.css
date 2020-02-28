@@ -1,0 +1,21 @@
+.Voting {
+  display: flex;
+  align-items: center;
+}
+
+.Voting__Counter {
+  margin-right: 1rem;
+  width: 1.5rem;
+}
+[dir="rtl"] .Voting__Counter {
+  margin-right: 0;
+  margin-left: 1rem;
+}
+
+.Voting button:last-child {
+  margin-left: 0.25rem;
+}
+[dir="rtl"] .Voting button:last-child {
+  margin-left: 0;
+  margin-right: 0.25rem;
+}

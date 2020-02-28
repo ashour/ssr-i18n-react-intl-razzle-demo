@@ -1,26 +1,21 @@
 import React, { useState } from "react";
 import { FormattedNumber } from "react-intl";
 
+import "./Voting.css";
+
 function Voting(props) {
   const [voteCount, setVoteCount] = useState(props.initialVoteCount);
 
-  const voteCountTextClass =
+  const counterModifierClass =
     voteCount < 0 ? "has-text-danger" : "has-text-success";
 
   return (
-    <p style={{ display: "flex", alignItems: "center" }}>
-      <strong
-        className={voteCountTextClass}
-        style={{ marginRight: "1rem", width: "1.5rem" }}
-      >
+    <p className="Voting">
+      <strong className={"Voting__Counter " + counterModifierClass}>
         <FormattedNumber value={voteCount} />
       </strong>
 
-      <button
-        className="button"
-        style={{ marginRight: "0.25rem" }}
-        onClick={() => setVoteCount(voteCount + 1)}
-      >
+      <button className="button" onClick={() => setVoteCount(voteCount + 1)}>
         <span className="icon is-small">
           <i className="far fa-thumbs-up"></i>
         </span>

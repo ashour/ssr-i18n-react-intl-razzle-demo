@@ -8,8 +8,6 @@ import { defaultLang } from "./i18n";
 import messages from "./i18n/messages";
 import GameIndex from "./pages/GameIndex";
 
-import "bulma/css/bulma.css";
-
 const App = ({ lang }) => (
   <IntlProvider
     locale={lang}

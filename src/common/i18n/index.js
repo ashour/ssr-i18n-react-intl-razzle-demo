@@ -25,6 +25,10 @@ export function determineUserLang(acceptedLangs, path = null) {
   return matchingAcceptedLang || defaultLang;
 }
 
+export function dir(lang) {
+  return lang === "ar" ? "rtl" : "ltr";
+}
+
 function findFirstSupported(langs) {
   const supported = Object.keys(supportedLangs);
 
